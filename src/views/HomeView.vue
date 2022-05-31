@@ -1,15 +1,30 @@
 <script setup>
+import ProductCard from '@/components/ProductCard.vue'
+import { useRandomValue } from '@/composition'
+import { useCategories } from '@/composition/services/useCategories'
+import { useProducts } from '@/composition/services/useProducts'
 import { useHead } from '@vueuse/head'
-import { useRandom } from '@/composition'
 
 useHead({ title: 'CPS Marketplace' })
 
-const categories = [
-  'Seus favoritos',
-  'Opções populares',
-  'Novidades',
-  'Recomendados'
-]
+const categories = useCategories()
+
+const categoriesOrLoading = $computed(() =>
+  categories.isFetching ? 4 : categories.data
+)
+
+const products = useProducts()
+
+const productsOrLoading = $computed(() =>
+  categories.isFetching || products.isFetching ? 8 : products.data
+)
+
+function productsByCategory(categoryId) {
+  if (typeof productsOrLoading === 'number') return productsOrLoading
+  return productsOrLoading.filter(
+    (product) => product.categoryId === categoryId
+  )
+}
 </script>
 
 <template>
@@ -22,20 +37,34 @@ const categories = [
   </div>
 
   <section
-    v-for="category of categories"
-    :key="category"
+    v-for="(category, index) of categoriesOrLoading"
+    :key="category?.uid ?? index"
     class="flex flex-col gap-3 mt-4 lg:mt-6"
   >
-    <h3 class="text-base font-semibold mt-4">{{ category }}</h3>
+    <h3
+      class="text-base font-semibold mt-4"
+      :class="{
+        [`loading ${useRandomValue('w-24', 'w-32', 'w-36', 'w-48')}`]:
+          !category?.uid
+      }"
+    >
+      {{ category?.title ?? '-' }}
+    </h3>
 
-    <ol class="flex flex-wrap p-2 -m-2 gap-4 lg:gap-6 overflow-x-auto">
-      <li
-        v-for="item of useRandom(2, 6)"
-        :key="item"
-        class="grid place-items-center p-4 lg:p-6 h-28 bg-layer-light-quaternary dark:bg-layer-dark-quaternary shadow-card rounded-lg text-sm text-black/60 dark:text-white/80 w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-1rem)]"
-      >
-        {{ item }}
-      </li>
+    <ol class="flex flex-wrap p-2 -m-2 gap-3 lg:gap-4 overflow-x-auto">
+      <ProductCard
+        v-for="(product, index) of productsByCategory(category?.uid)"
+        :key="product?.uid ?? index"
+        :layout="category.horizontal ? 'horizontal' : 'vertical'"
+        :class="{
+          'loading h-28': !product?.uid,
+          'w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-1rem) xl:w-[calc(25%-0.75rem)]':
+            category.horizontal,
+          'w-full md:w-[calc(25%-0.75rem)] lg:w-[calc(12.5%-.875rem)]':
+            !category.horizontal
+        }"
+        v-bind="product"
+      />
     </ol>
   </section>
 </template>

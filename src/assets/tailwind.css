@@ -50,4 +50,8 @@
   .can-touch {
     @apply motion-safe:transition tap-highlight-color-transparent cursor-pointer;
   }
+
+  .loading {
+    @apply bg-neutral-300/60 dark:bg-neutral-700/50 text-black/0 cursor-default rounded animate-pulse;
+  }
 }

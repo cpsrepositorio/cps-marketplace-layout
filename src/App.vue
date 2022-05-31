@@ -19,7 +19,7 @@ let searchField = $ref('')
       <AppMenu />
 
       <main
-        class="w-full h-full md:rounded-tl-lg p-4 lg:p-6 shadow-tooltip bg-layer-light-tertiary dark:bg-layer-dark-tertiary overflow-y-auto"
+        class="w-full h-full md:rounded-tl-lg p-4 lg:p-6 shadow-layer dark:shadow-dark-layer bg-layer-light-tertiary dark:bg-layer-dark-tertiary overflow-y-auto"
       >
         <RouterView />
       </main>

@@ -49,13 +49,27 @@ module.exports = {
       },
 
       boxShadow: {
-        layer: 'inset 0 0 1px rgba(0 0 0 / 6%), 0 2px 4px rgba(0 0 0 / 4%)',
+        layer:
+          'inset 0 0 1px rgba(0 0 0 / 6%), 0 2px 4px rgba(0 0 0 / 4%), 0 -2px 4px rgba(0 0 0 / 2%)',
         card: 'inset 0 0 1px rgba(0 0 0 / 6%), 0 2px 4px rgba(0 0 0 / 10%)',
         hover: 'inset 0 0 1px rgba(0 0 0 / 6%), 0 4px 8px rgba(0 0 0 / 14%)',
         tooltip: 'inset 0 0 1px rgba(0 0 0 / 6%), 0 8px 16px rgba(0 0 0 / 14%)',
         flyout: 'inset 0 0 1px rgba(0 0 0 / 6%), 0 8px 16px rgba(0 0 0 / 14%)',
         dialog:
-          'inset 0 0 1px rgba(0 0 0 / 6%), 0 2px 21px rgba(0 0 0 / 14%), 0 32px 64px rgba(0 0 0 / 18%)'
+          'inset 0 0 1px rgba(0 0 0 / 6%), 0 2px 21px rgba(0 0 0 / 14%), 0 32px 64px rgba(0 0 0 / 18%)',
+
+        'dark-layer':
+          'inset 0 0 1px rgba(0 0 0 / 10%), 0 2px 4px rgba(0 0 0 / 13%), 0 -2px 4px rgba(0 0 0 / 6%)',
+        'dark-card':
+          'inset 0 0 1px rgba(0 0 0 / 20%), 0 2px 4px rgba(0 0 0 / 26%)',
+        'dark-hover':
+          'inset 0 0 1px rgba(0 0 0 / 20%), 0 4px 8px rgba(0 0 0 / 26%)',
+        'dark-tooltip':
+          'inset 0 0 1px rgba(0 0 0 / 20%), 0 8px 16px rgba(0 0 0 / 14%)',
+        'dark-flyout':
+          'inset 0 0 1px rgba(0 0 0 / 20%), 0 8px 16px rgba(0 0 0 / 26%)',
+        'dark-dialog':
+          'inset 0 0 1px rgba(0 0 0 / 20%), 0 2px 21px rgba(0 0 0 / 37%), 0 32px 64px rgba(0 0 0 / 37%)'
       },
 
       opacity: {
