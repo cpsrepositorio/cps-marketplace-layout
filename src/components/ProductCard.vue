@@ -45,16 +45,30 @@ const props = defineProps({
       class="flex gap-4 lg:gap-5"
       :class="{ 'flex-col': props.layout === 'vertical' }"
     >
-      <img
+      <div
         v-if="props.logo"
-        :src="`${props.logo}?${props.uid}`"
-        role="presentation"
-        class="object-cover rounded shadow"
+        class="relative rounded shadow bg-layer-light-tertiary dark:bg-layer-dark-tertiary bg-center bg-cover overflow-hidden"
         :class="{
           'w-20 h-20': props.layout === 'horizontal',
           'w-28 h-28': props.layout === 'vertical'
         }"
-      />
+      >
+        <img
+          :src="`${props.logo}?${props.uid}`"
+          role="presentation"
+          loading="lazy"
+          class="absolute rounded w-full h-full object-cover z-1"
+        />
+
+        <div
+          class="absolute rounded w-full h-full blur-lg z-0"
+          :style="{
+            'background-image': `url('${props.logo.replace('500/500', '5/5')}?${
+              props.uid
+            }')`
+          }"
+        />
+      </div>
       <div class="flex flex-col justify-center gap-1">
         <h4 class="font-semibold">{{ props.name ?? '-' }}</h4>
         <span
