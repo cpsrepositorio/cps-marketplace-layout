@@ -37,15 +37,15 @@
   "src/main.js": [],
   "index.html": [],
   "src/views/ProductsView.vue": [
-    "/cps-marketplace-layout/assets/ProductsView.a50cf059.js"
+    "/cps-marketplace-layout/assets/ProductsView.c5625652.js"
   ],
   "src/views/CategoriesView.vue": [
-    "/cps-marketplace-layout/assets/CategoriesView.3d2d7736.js"
+    "/cps-marketplace-layout/assets/CategoriesView.a47ff8f7.js"
   ],
   "src/views/FavoritesView.vue": [
-    "/cps-marketplace-layout/assets/FavoritesView.fa92fe3b.js"
+    "/cps-marketplace-layout/assets/FavoritesView.31b49377.js"
   ],
   "src/views/AboutView.vue": [
-    "/cps-marketplace-layout/assets/AboutView.3ba81177.js"
+    "/cps-marketplace-layout/assets/AboutView.3ee8359f.js"
   ]
 }

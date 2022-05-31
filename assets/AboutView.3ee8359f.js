@@ -1,0 +1,1 @@
+import{u as e,o as t,c as o}from"./app.cb31727c.js";const s={class:"text-xl font-semibold"},n={name:"AboutView",setup(a){return e({title:"Sobre - CPS Marketplace"}),(c,r)=>(t(),o("h2",s,"Sobre"))}};export{n as default};
