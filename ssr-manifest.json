@@ -37,15 +37,15 @@
   "src/main.js": [],
   "index.html": [],
   "src/views/ProductsView.vue": [
-    "/assets/ProductsView.101051ce.js"
+    "/cps-marketplace-layout/assets/ProductsView.e8f09a51.js"
   ],
   "src/views/CategoriesView.vue": [
-    "/assets/CategoriesView.f588aa2f.js"
+    "/cps-marketplace-layout/assets/CategoriesView.14f7a373.js"
   ],
   "src/views/FavoritesView.vue": [
-    "/assets/FavoritesView.ef1245b1.js"
+    "/cps-marketplace-layout/assets/FavoritesView.c3c7fc0f.js"
   ],
   "src/views/AboutView.vue": [
-    "/assets/AboutView.cf5e4df7.js"
+    "/cps-marketplace-layout/assets/AboutView.9888e3a4.js"
   ]
 }

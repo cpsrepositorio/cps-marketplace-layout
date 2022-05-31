@@ -1,1 +1,0 @@
-import{u as e,o as t,c as a}from"./app.db5e0d59.js";const s={class:"text-xl font-semibold"},l={name:"CategoriesView",setup(o){return e({title:"Categorias - CPS Marketplace"}),(r,c)=>(t(),a("h2",s,"Categorias"))}};export{l as default};
