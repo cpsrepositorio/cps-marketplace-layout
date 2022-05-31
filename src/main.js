@@ -3,10 +3,14 @@ import { routes } from '@/router'
 import { createPinia } from 'pinia'
 import { ViteSSG } from 'vite-ssg'
 
-export const createApp = ViteSSG(App, { routes }, ({ app, initialState }) => {
-  const pinia = createPinia()
-  app.use(pinia)
+export const createApp = ViteSSG(
+  App,
+  { routes, base: import.meta.env.BASE_URL },
+  ({ app, initialState }) => {
+    const pinia = createPinia()
+    app.use(pinia)
 
-  if (import.meta.env.SSR) initialState.pinia = pinia.state.value
-  else pinia.state.value = initialState.pinia || {}
-})
+    if (import.meta.env.SSR) initialState.pinia = pinia.state.value
+    else pinia.state.value = initialState.pinia || {}
+  }
+)
