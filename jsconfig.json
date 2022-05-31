@@ -1,0 +1,11 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "types": ["vue/ref-macros"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
