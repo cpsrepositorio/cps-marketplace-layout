@@ -37,15 +37,15 @@
   "src/main.js": [],
   "index.html": [],
   "src/views/ProductsView.vue": [
-    "/assets/ProductsView.5c504563.js"
+    "/assets/ProductsView.940c8ef7.js"
   ],
   "src/views/CategoriesView.vue": [
-    "/assets/CategoriesView.24ad5802.js"
+    "/assets/CategoriesView.f2c481af.js"
   ],
   "src/views/FavoritesView.vue": [
-    "/assets/FavoritesView.c27dc45d.js"
+    "/assets/FavoritesView.946559d4.js"
   ],
   "src/views/AboutView.vue": [
-    "/assets/AboutView.aa25eb27.js"
+    "/assets/AboutView.8be5c2db.js"
   ]
 }
