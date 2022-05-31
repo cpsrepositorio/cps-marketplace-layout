@@ -1,0 +1,51 @@
+{
+  "vite/modulepreload-polyfill": [],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "src/assets/icons/weather-sunny.svg?component": [],
+  "src/assets/icons/weather-moon.svg?component": [],
+  "src/components/LogoCPS.vue": [],
+  "node_modules/vue-demi/lib/index.mjs": [],
+  "node_modules/@vueuse/shared/index.mjs": [],
+  "node_modules/@vueuse/core/index.mjs": [],
+  "node_modules/vue-router/dist/vue-router.esm-bundler.js": [],
+  "src/components/AppHeader.vue": [],
+  "src/assets/icons/apps.svg?component": [],
+  "src/assets/icons/heart.svg?component": [],
+  "src/assets/icons/home.svg?component": [],
+  "src/assets/icons/library.svg?component": [],
+  "src/assets/icons/question-circle.svg?component": [],
+  "src/components/AppMenu.vue": [],
+  "src/assets/icons/search.svg?component": [],
+  "src/components/SearchBar.vue": [],
+  "src/App.vue?vue&type=style&index=0&lang.css": [],
+  "src/App.vue": [],
+  "vite/preload-helper": [],
+  "src/components/ProductCard.vue": [],
+  "src/composition/useRandom.js": [],
+  "src/composition/services/useCategories.js": [],
+  "src/composition/services/useProducts.js": [],
+  "node_modules/@vueuse/head/dist/index.mjs": [],
+  "src/views/HomeView.vue": [],
+  "src/router/index.js": [],
+  "node_modules/pinia/dist/pinia.esm-browser.js": [],
+  "node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "node_modules/vite-ssg/dist/index.mjs": [],
+  "src/main.js": [],
+  "index.html": [],
+  "src/views/ProductsView.vue": [
+    "/assets/ProductsView.5c504563.js"
+  ],
+  "src/views/CategoriesView.vue": [
+    "/assets/CategoriesView.24ad5802.js"
+  ],
+  "src/views/FavoritesView.vue": [
+    "/assets/FavoritesView.c27dc45d.js"
+  ],
+  "src/views/AboutView.vue": [
+    "/assets/AboutView.aa25eb27.js"
+  ]
+}
