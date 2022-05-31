@@ -1,5 +1,6 @@
 {
   "name": "cps-marketplace-layout",
+  "description": "Sample layout for the CPS Marketplace project built with Vue 3 + Vite + Tailwind.",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",

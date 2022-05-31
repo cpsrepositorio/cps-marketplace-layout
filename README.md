@@ -1,6 +1,6 @@
 # cps-marketplace-layout
 
-This template should help get you started developing with Vue 3 in Vite.
+Sample layout for the CPS Marketplace project built with Vue 3 + Vite + Tailwind.
 
 ## Recommended IDE Setup
 
@@ -28,8 +28,8 @@ npm run dev
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Preview Production Build
 
 ```sh
-npm run lint
+npm run preview
 ```
