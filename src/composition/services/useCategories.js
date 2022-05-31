@@ -16,7 +16,7 @@ export function useCategories() {
     state.data = [
       { uid: 1, title: 'Recomendados para você', horizontal: true },
       { uid: 2, title: 'Opções populares', horizontal: false },
-      { uid: 3, title: 'Novidades', horizontal: false },
+      { uid: 3, title: 'Novidades', horizontal: true },
       { uid: 4, title: 'Comece algo novo', horizontal: false }
     ]
   })

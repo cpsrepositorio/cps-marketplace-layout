@@ -58,9 +58,9 @@ function productsByCategory(categoryId) {
         :layout="category.horizontal ? 'horizontal' : 'vertical'"
         :class="{
           'loading h-28': !product?.uid,
-          'w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-1rem) xl:w-[calc(25%-0.75rem)]':
+          'w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-0.675rem)] xl:w-[calc(25%-0.75rem)]':
             category.horizontal,
-          'w-full md:w-[calc(25%-0.75rem)] lg:w-[calc(12.5%-.875rem)]':
+          'w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] xl:w-[calc(12.5%-.875rem)]':
             !category.horizontal
         }"
         v-bind="product"

@@ -21,7 +21,11 @@ let searchField = $ref('')
       <main
         class="w-full h-full md:rounded-tl-lg p-4 lg:p-6 shadow-layer dark:shadow-dark-layer bg-layer-light-tertiary dark:bg-layer-dark-tertiary overflow-y-auto"
       >
-        <RouterView />
+        <div class="max-w-[112rem] mx-auto">
+          <KeepAlive>
+            <RouterView />
+          </KeepAlive>
+        </div>
       </main>
     </div>
   </div>

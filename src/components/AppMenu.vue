@@ -11,6 +11,7 @@ const links = [
   { url: '/produtos', text: 'Produtos', icon: IconLibrary },
   { url: '/categorias', text: 'Categorias', icon: IconApps },
   { url: '/favoritos', text: 'Favoritos', icon: IconHeart },
+  '',
   { url: '/sobre', text: 'Sobre', icon: IconQuestionCircle }
 ]
 </script>
@@ -20,16 +21,18 @@ const links = [
     class="flex-auto flex md:flex-col flex-grow-0 flex-shrink-0 justify-center md:justify-start gap-1 sm:gap-2 md:gap-3 px-4 md:pl-1 md:pr-2 h-11 md:h-full"
   >
     <RouterLink
-      v-for="link of links"
-      :key="link.url"
-      :to="link.url"
+      v-for="(link, index) of links"
+      :key="link?.url ?? index"
+      :to="link?.url ?? '/'"
       custom
       v-slot="{ isActive, href, navigate }"
     >
+      <span v-if="!link?.url" class="hidden flex-auto sm:block" />
       <a
+        v-else
         :href="href"
         @click="navigate"
-        class="flex flex-col shrink-0 gap-0.5 justify-center items-center w-14 md:w-16 h-full md:h-16 can-focus can-touch rounded-t md:rounded text-black/60 hover:text-black/90 dark:text-white/80 dark:hover:text-white hover:bg-black/5 dark:hover:bg-layer-dark-secondary transition-all relative"
+        class="flex flex-col shrink-0 gap-0.5 justify-center items-center w-14 md:w-16 h-10 md:h-16 can-focus can-touch rounded text-black/60 hover:text-black/90 dark:text-white/80 dark:hover:text-white hover:bg-black/5 dark:hover:bg-layer-dark-secondary transition-all relative"
         :class="{
           'border-b-0 border-b-accent/0 pt-1': !isActive,
           'pb-1 bg-layer-light-quaternary dark:bg-layer-dark-quaternary pointer-events-none':

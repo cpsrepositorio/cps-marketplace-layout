@@ -34,15 +34,15 @@ const props = defineProps({
     class="rounded-lg text-sm"
     :class="{
       'p-4': props.layout === 'horizontal',
-      'px-4 pb-6 pt-9 grid place-items-center text-center':
+      'px-4 pb-7 pt-10 grid place-items-center text-center':
         props.layout === 'vertical',
-      'shadow-card dark:shadow-dark-card hover:shadow-hover dark:hover:shadow-dark-hover bg-layer-light-quaternary/70 dark:bg-layer-dark-quaternary/70 hover:-translate-y-0.5 hover:bg-layer-light-quaternary dark:hover:bg-layer-dark-quaternary can-focus can-touch':
+      'shadow-card dark:shadow-dark-card hover:shadow-hover dark:hover:shadow-dark-hover bg-layer-light-quaternary/80 dark:bg-layer-dark-quaternary/70 hover:-translate-y-0.5 hover:bg-layer-light-quaternary dark:hover:bg-layer-dark-quaternary can-focus can-touch':
         props.uid
     }"
     :tabindex="props.uid ? 0 : -1"
   >
     <div
-      class="flex gap-4 lg:gap-5"
+      class="flex gap-4 lg:gap-5 items-center"
       :class="{ 'flex-col': props.layout === 'vertical' }"
     >
       <div
@@ -50,7 +50,7 @@ const props = defineProps({
         class="relative rounded shadow bg-layer-light-tertiary dark:bg-layer-dark-tertiary bg-center bg-cover overflow-hidden"
         :class="{
           'w-20 h-20': props.layout === 'horizontal',
-          'w-28 h-28': props.layout === 'vertical'
+          'w-28 h-28 -mx-2': props.layout === 'vertical'
         }"
       >
         <img
