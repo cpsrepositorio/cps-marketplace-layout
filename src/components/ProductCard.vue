@@ -30,7 +30,7 @@ const props = defineProps({
 
 <template>
   <RouterLink
-    :to="`/product/${props.uid}`"
+    :to="`/${props.uid}`"
     class="rounded-lg text-sm"
     :class="{
       'p-4': props.layout === 'horizontal',

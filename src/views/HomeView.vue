@@ -1,4 +1,5 @@
 <script setup>
+import LayoutContainer from '@/components/LayoutContainer.vue'
 import ProductCard from '@/components/ProductCard.vue'
 import { useRandomValue } from '@/composition'
 import { useCategories } from '@/composition/services/useCategories'
@@ -28,43 +29,45 @@ function productsByCategory(categoryId) {
 </script>
 
 <template>
-  <h2 class="text-xl font-semibold">Início</h2>
+  <LayoutContainer>
+    <h2 class="text-xl font-semibold">Início</h2>
 
-  <div
-    class="bg-gradient-to-br rounded from-cyan-800 to-red-800 text-white grid place-items-center h-[25vh] mt-4 lg:mt-6"
-  >
-    Algum destaque especial aqui
-  </div>
-
-  <section
-    v-for="(category, index) of categoriesOrLoading"
-    :key="category?.uid ?? index"
-    class="flex flex-col gap-3 mt-4 lg:mt-6"
-  >
-    <h3
-      class="text-base font-semibold mt-4"
-      :class="{
-        [`loading ${useRandomValue('w-24', 'w-32', 'w-36', 'w-48')}`]:
-          !category?.uid
-      }"
+    <div
+      class="bg-gradient-to-br rounded from-cyan-800 to-red-800 text-white grid place-items-center h-[25vh] mt-4 lg:mt-6"
     >
-      {{ category?.title ?? '-' }}
-    </h3>
+      Algum destaque especial aqui
+    </div>
 
-    <ol class="flex flex-wrap p-2 -m-2 gap-3 lg:gap-4 overflow-x-auto">
-      <ProductCard
-        v-for="(product, index) of productsByCategory(category?.uid)"
-        :key="product?.uid ?? index"
-        :layout="category.horizontal ? 'horizontal' : 'vertical'"
+    <section
+      v-for="(category, index) of categoriesOrLoading"
+      :key="category?.uid ?? index"
+      class="flex flex-col gap-3 mt-4 lg:mt-6"
+    >
+      <h3
+        class="text-base font-semibold mt-4"
         :class="{
-          'loading h-28': !product?.uid,
-          'w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-0.675rem)] xl:w-[calc(25%-0.75rem)]':
-            category.horizontal,
-          'w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] xl:w-[calc(12.5%-.875rem)]':
-            !category.horizontal
+          [`loading ${useRandomValue('w-24', 'w-32', 'w-36', 'w-48')}`]:
+            !category?.uid
         }"
-        v-bind="product"
-      />
-    </ol>
-  </section>
+      >
+        {{ category?.title ?? '-' }}
+      </h3>
+
+      <ol class="flex flex-wrap p-2 -m-2 gap-3 lg:gap-4 overflow-x-auto">
+        <ProductCard
+          v-for="(product, index) of productsByCategory(category?.uid)"
+          :key="product?.uid ?? index"
+          :layout="category.horizontal ? 'horizontal' : 'vertical'"
+          :class="{
+            'loading h-28': !product?.uid,
+            'w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-0.675rem)] xl:w-[calc(25%-0.75rem)]':
+              category.horizontal,
+            'w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] xl:w-[calc(12.5%-.875rem)]':
+              !category.horizontal
+          }"
+          v-bind="product"
+        />
+      </ol>
+    </section>
+  </LayoutContainer>
 </template>

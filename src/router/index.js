@@ -7,6 +7,11 @@ export const routes = [
     component: HomeView
   },
   {
+    path: '/:id',
+    name: 'product',
+    component: () => import('@/views/ProductDetailsView.vue')
+  },
+  {
     path: '/produtos',
     name: 'products',
     component: () => import('@/views/ProductsView.vue')

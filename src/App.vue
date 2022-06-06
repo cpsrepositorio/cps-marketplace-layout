@@ -18,15 +18,11 @@ let searchField = $ref('')
     <div class="flex-auto flex flex-col md:flex-row overflow-hidden">
       <AppMenu />
 
-      <main
-        class="w-full h-full md:rounded-tl-lg p-4 lg:p-6 shadow-layer dark:shadow-dark-layer bg-layer-light-tertiary dark:bg-layer-dark-tertiary overflow-y-auto"
-      >
-        <div class="max-w-[112rem] mx-auto">
-          <KeepAlive>
-            <RouterView />
-          </KeepAlive>
-        </div>
-      </main>
+      <RouterView v-slot="{ Component }">
+        <KeepAlive>
+          <component :is="Component" />
+        </KeepAlive>
+      </RouterView>
     </div>
   </div>
 </template>

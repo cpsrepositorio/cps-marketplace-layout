@@ -2,11 +2,11 @@
 import LayoutContainer from '@/components/LayoutContainer.vue'
 import { useHead } from '@vueuse/head'
 
-useHead({ title: 'Produtos - CPS Marketplace' })
+useHead({ title: 'CPS Marketplace' })
 </script>
 
 <template>
   <LayoutContainer>
-    <h2 class="text-xl font-semibold">Produtos</h2>
+    <div>TODO</div>
   </LayoutContainer>
 </template>
