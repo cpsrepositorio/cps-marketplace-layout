@@ -23,7 +23,7 @@ const customClass = $computed(() => {
 <template>
   <button
     v-bind="$attrs"
-    class="h-8 rounded grid place-items-center gap-3 can-focus can-touch"
+    class="h-8 rounded grid grid-flow-col place-items-center justify-center gap-3 can-focus can-touch"
     :class="customClass"
   >
     <slot />

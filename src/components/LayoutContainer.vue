@@ -15,7 +15,7 @@ const props = defineProps({
     :class="{ 'overflow-y-auto': props.allowScroll }"
   >
     <div class="max-w-[112rem] mx-auto min-h-full flex flex-col">
-      <h2 v-if="props.title" class="text-xl font-semibold">
+      <h2 v-if="props.title" class="text-2xl font-semibold">
         {{ props.title }}
       </h2>
 

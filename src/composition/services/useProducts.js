@@ -1,6 +1,8 @@
 import { useProductsStore } from '@/stores/products'
 import { promiseTimeout, useFetch } from '@vueuse/core'
 import { onMounted, ref } from 'vue'
+import { useCompanies } from './useCompanies'
+import { useRandomDate } from '@/composition'
 
 export function useProducts() {
   const state = $ref({
@@ -25,6 +27,8 @@ export function useProducts() {
         .get()
         .json()
 
+      const companies = await useCompanies()
+
       state.isFetching = isFetching
       state.error = error
 
@@ -32,6 +36,8 @@ export function useProducts() {
         data.value.map((product, index) => ({
           ...product,
           categoryId: (index % 4) + 1,
+          company: companies.data.pop(),
+          createdAt: useRandomDate(new Date(2020, 0, 1), new Date()),
           rating: Math.round(
             product.phone_number
               .replace(/\D/g, '')

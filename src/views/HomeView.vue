@@ -58,6 +58,7 @@ function productsByCategory(categoryId) {
           v-for="(product, index) of productsByCategory(category?.uid)"
           :key="product?.uid ?? index"
           :layout="category.horizontal ? 'horizontal' : 'vertical'"
+          :item="product"
           :class="{
             'loading h-28': !product?.uid,
             'w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.33%-0.675rem)] xl:w-[calc(25%-0.75rem)]':
@@ -65,7 +66,6 @@ function productsByCategory(categoryId) {
             'w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] xl:w-[calc(12.5%-.875rem)]':
               !category.horizontal
           }"
-          v-bind="product"
         />
       </ol>
     </section>
