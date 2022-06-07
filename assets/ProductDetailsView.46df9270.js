@@ -1,0 +1,1 @@
+import{o as e,a,c as t,w as s,_ as c,b as o,u as r}from"./app.00eca71a.js";const _=o("div",null,"TODO",-1),d={name:"ProductDetailsView",setup(l){return e(()=>r({title:"CPS Marketplace"})),(n,i)=>(a(),t(c,null,{default:s(()=>[_]),_:1}))}};export{d as default};

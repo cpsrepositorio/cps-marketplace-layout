@@ -4,8 +4,9 @@
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
   "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
   "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
-  "src/assets/icons/weather-sunny.svg?component": [],
   "src/assets/icons/weather-moon.svg?component": [],
+  "src/assets/icons/weather-sunny.svg?component": [],
+  "src/components/Button.vue": [],
   "src/components/LogoCPS.vue": [],
   "node_modules/vue-demi/lib/index.mjs": [],
   "node_modules/@vueuse/shared/index.mjs": [],
@@ -23,29 +24,55 @@
   "src/App.vue?vue&type=style&index=0&lang.css": [],
   "src/App.vue": [],
   "vite/preload-helper": [],
+  "src/components/LayoutContainer.vue": [],
+  "src/assets/icons/heart-filled.svg?component": [],
+  "node_modules/pinia/dist/pinia.esm-browser.js": [],
+  "src/stores/likes.js": [],
+  "src/components/LikeButton.vue?vue&type=style&index=0&scoped=true&lang.css": [],
+  "plugin-vue:export-helper": [],
+  "src/components/LikeButton.vue": [],
+  "src/components/ProductAvatar.vue": [],
+  "src/assets/icons/star-filled.svg?component": [],
+  "src/assets/icons/star-half.svg?component": [],
+  "src/assets/icons/star.svg?component": [],
+  "src/components/StarRating.vue": [],
   "src/components/ProductCard.vue": [],
   "src/composition/useRandom.js": [],
   "src/composition/services/useCategories.js": [],
+  "src/stores/products.js": [],
+  "src/composition/services/useCompanies.js": [],
   "src/composition/services/useProducts.js": [],
   "node_modules/@vueuse/head/dist/index.mjs": [],
   "src/views/HomeView.vue": [],
   "src/router/index.js": [],
-  "node_modules/pinia/dist/pinia.esm-browser.js": [],
+  "node_modules/pinia-plugin-persistedstate/dist/index.mjs": [],
   "node_modules/vite-ssg/dist/chunks/state.mjs": [],
   "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
   "node_modules/vite-ssg/dist/index.mjs": [],
   "src/main.js": [],
   "index.html": [],
+  "src/views/ProductDetailsView.vue": [
+    "/cps-marketplace-layout/assets/ProductDetailsView.46df9270.js"
+  ],
   "src/views/ProductsView.vue": [
-    "/cps-marketplace-layout/assets/ProductsView.c5625652.js"
+    "/cps-marketplace-layout/assets/ProductsView.6a9f8523.js"
+  ],
+  "src/components/EmptyState.vue": [
+    "/cps-marketplace-layout/assets/EmptyState.687f2749.js"
   ],
   "src/views/CategoriesView.vue": [
-    "/cps-marketplace-layout/assets/CategoriesView.a47ff8f7.js"
+    "/cps-marketplace-layout/assets/CategoriesView.e4c2be33.js"
+  ],
+  "src/assets/icons/delete.svg?component": [
+    "/cps-marketplace-layout/assets/FavoritesView.573e9b1b.js"
+  ],
+  "src/components/ProductRow.vue": [
+    "/cps-marketplace-layout/assets/FavoritesView.573e9b1b.js"
   ],
   "src/views/FavoritesView.vue": [
-    "/cps-marketplace-layout/assets/FavoritesView.31b49377.js"
+    "/cps-marketplace-layout/assets/FavoritesView.573e9b1b.js"
   ],
   "src/views/AboutView.vue": [
-    "/cps-marketplace-layout/assets/AboutView.3ee8359f.js"
+    "/cps-marketplace-layout/assets/AboutView.5a916df8.js"
   ]
 }
