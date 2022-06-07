@@ -39,6 +39,10 @@
 }
 
 @layer utilities {
+  .-outline-offset-1 {
+    outline-offset: -1px;
+  }
+
   .tap-highlight-color-transparent {
     -webkit-tap-highlight-color: transparent;
   }
@@ -47,8 +51,12 @@
     @apply motion-safe:transition outline outline-[1.5px] outline-offset-1 outline-black/0 focus-visible:outline-black dark:outline-white/0 dark:focus-visible:outline-white;
   }
 
+  .can-focus-inner {
+    @apply motion-safe:transition outline outline-[1.5px] -outline-offset-1 outline-black/0 focus-visible:outline-black dark:outline-white/0 dark:focus-visible:outline-white;
+  }
+
   .can-touch {
-    @apply motion-safe:transition tap-highlight-color-transparent cursor-pointer;
+    @apply motion-safe:transition tap-highlight-color-transparent cursor-pointer disabled:cursor-default disabled:pointer-events-none;
   }
 
   .loading {

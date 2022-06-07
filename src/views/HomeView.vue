@@ -22,9 +22,10 @@ const productsOrLoading = $computed(() =>
 
 function productsByCategory(categoryId) {
   if (typeof productsOrLoading === 'number') return productsOrLoading
-  return productsOrLoading.filter(
-    (product) => product.categoryId === categoryId
-  )
+  return productsOrLoading
+    .filter((product) => product.categoryId === categoryId)
+    .sort((a, b) => a.uid.localeCompare(b.uid))
+    .slice(0, 8)
 }
 </script>
 

@@ -12,7 +12,7 @@ const links = [
   { url: '/categorias', text: 'Categorias', icon: IconApps },
   { url: '/favoritos', text: 'Favoritos', icon: IconHeart },
   '',
-  { url: '/sobre', text: 'Sobre', icon: IconQuestionCircle }
+  { url: '/ajuda', text: 'Ajuda', icon: IconQuestionCircle }
 ]
 </script>
 
@@ -32,7 +32,7 @@ const links = [
         v-else
         :href="href"
         @click="navigate"
-        class="flex flex-col shrink-0 gap-0.5 justify-center items-center w-14 md:w-16 h-10 md:h-16 can-focus can-touch rounded text-black/60 hover:text-black/90 dark:text-white/80 dark:hover:text-white hover:bg-black/5 dark:hover:bg-layer-dark-secondary transition-all relative"
+        class="flex flex-col shrink-0 gap-0.5 justify-center items-center w-14 md:w-16 h-10 md:h-16 can-focus-inner can-touch rounded text-black/60 hover:text-black/90 dark:text-white/80 dark:hover:text-white hover:bg-black/5 dark:hover:bg-layer-dark-secondary transition-all relative"
         :class="{
           'border-b-0 border-b-accent/0 pt-1': !isActive,
           'pb-1 bg-layer-light-quaternary dark:bg-layer-dark-quaternary pointer-events-none':

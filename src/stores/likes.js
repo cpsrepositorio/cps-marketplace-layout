@@ -1,26 +1,26 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-export const useLikeStore = defineStore({
-  id: 'like',
+export const useLikesStore = defineStore(
+  'likes',
 
-  state: () => ({
-    likes: []
-  }),
+  () => {
+    const likes = ref([])
 
-  getters: {
-    likesCount: (state) => state.likes.length,
-    isLiked: (state, id) => state.likes.indexOf(id) === -1
+    function isLiked(item) {
+      return !!likes.value.find((like) => like?.uid === item.uid)
+    }
+
+    function like(item) {
+      if (!isLiked(item)) likes.value.push(item)
+    }
+
+    function unlike(item) {
+      likes.value = likes.value.filter((like) => like?.uid !== item.uid)
+    }
+
+    return { likes, isLiked, like, unlike }
   },
 
-  actions: {
-    likeItem(id) {
-      if (this.likes.indexOf(id) === -1) {
-        this.likes.push(id)
-      }
-    },
-
-    unlikeItem(id) {
-      this.likes = this.likes.filter((likedId) => likedId !== id)
-    }
-  }
-})
+  { persist: true }
+)

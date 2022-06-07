@@ -1,6 +1,7 @@
 <script setup>
-import IconWeatherSunny from '@/assets/icons/weather-sunny.svg?component'
 import IconWeatherMoon from '@/assets/icons/weather-moon.svg?component'
+import IconWeatherSunny from '@/assets/icons/weather-sunny.svg?component'
+import Button from '@/components/Button.vue'
 import LogoCPS from '@/components/LogoCPS.vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { useRoute } from 'vue-router'
@@ -38,15 +39,15 @@ const toggleDark = useToggle(isDark)
     <slot name="search" />
 
     <div class="flex items-center gap-2 md:gap-4 lg:gap-6">
-      <button
-        class="w-6 h-6 rounded grid place-items-center bg-white/0 hover:bg-neutral-900/5 dark:hover:bg-white/5 active:bg-neutral-700/5 dark:active:bg-neutral-100/5 active:text-black/60 dark:active:text-white/80 can-focus can-touch"
-        :title="isDark ? 'Modo claro' : 'Modo escuro'"
+      <Button
+        appearance="ghost"
+        :title="isDark ? 'Usar modo claro' : 'Usar modo escuro'"
         @click="toggleDark(!isDark)"
       >
         <IconWeatherSunny v-if="isDark" class="w-4 h-4" />
         <IconWeatherMoon v-else class="w-4 h-4" />
         <span class="sr-only">{{ isDark ? 'Modo claro' : 'Modo escuro' }}</span>
-      </button>
+      </Button>
 
       <div
         class="w-8 h-8 flex-shrink-0 rounded-full bg-black/20 dark:bg-white/10"

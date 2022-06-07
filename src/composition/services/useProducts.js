@@ -1,3 +1,4 @@
+import { useProductsStore } from '@/stores/products'
 import { promiseTimeout, useFetch } from '@vueuse/core'
 import { onMounted, ref } from 'vue'
 
@@ -8,24 +9,40 @@ export function useProducts() {
     data: null
   })
 
+  const productsStore = useProductsStore()
+
   onMounted(async () => {
     state.isFetching = true
-    await promiseTimeout(1000)
+    await promiseTimeout(500)
 
-    const { isFetching, error, data } = await useFetch(
-      'https://random-data-api.com/api/restaurant/random_restaurant?size=32'
-    )
-      .get()
-      .json()
+    if (productsStore.items.length) {
+      state.isFetching = false
+      state.error = null
+    } else {
+      const { isFetching, error, data } = await useFetch(
+        'https://random-data-api.com/api/restaurant/random_restaurant?size=100'
+      )
+        .get()
+        .json()
 
-    state.isFetching = isFetching
-    state.error = error
-    state.data = ref(
-      data.value.map((product, index) => ({
-        ...product,
-        categoryId: (index % 4) + 1
-      }))
-    )
+      state.isFetching = isFetching
+      state.error = error
+
+      productsStore.fill(
+        data.value.map((product, index) => ({
+          ...product,
+          categoryId: (index % 4) + 1,
+          rating: Math.round(
+            product.phone_number
+              .replace(/\D/g, '')
+              .split('')
+              .reduce((acc, curr) => acc + Number(curr), -29) / 9.5
+          )
+        }))
+      )
+    }
+
+    state.data = ref(productsStore.items)
   })
 
   return state

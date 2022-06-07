@@ -27,8 +27,8 @@ export const routes = [
     component: () => import('@/views/FavoritesView.vue')
   },
   {
-    path: '/sobre',
-    name: 'about',
+    path: '/ajuda',
+    name: 'help',
     component: () => import('@/views/AboutView.vue')
   }
 ]

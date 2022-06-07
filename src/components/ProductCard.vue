@@ -1,4 +1,7 @@
 <script setup>
+import LikeButton from './LikeButton.vue'
+import StarRating from './StarRating.vue'
+
 const props = defineProps({
   layout: {
     type: String,
@@ -24,14 +27,25 @@ const props = defineProps({
   logo: {
     type: String,
     default: ''
+  },
+
+  rating: {
+    type: Number,
+    default: null
   }
+})
+
+const item = $computed(() => {
+  const item = { ...props }
+  delete item.layout
+  return item
 })
 </script>
 
 <template>
   <RouterLink
     :to="`/${props.uid}`"
-    class="rounded-lg text-sm"
+    class="relative rounded-lg text-sm"
     :class="{
       'p-4': props.layout === 'horizontal',
       'px-4 pb-7 pt-10 grid place-items-center text-center':
@@ -41,6 +55,8 @@ const props = defineProps({
     }"
     :tabindex="props.uid ? 0 : -1"
   >
+    <LikeButton :item="item" class="absolute top-2 right-2" />
+
     <div
       class="flex gap-4 lg:gap-5 items-center"
       :class="{ 'flex-col': props.layout === 'vertical' }"
@@ -76,6 +92,13 @@ const props = defineProps({
           class="text-black/60 dark:text-white/80 text-xs"
           >{{ props.type }}</span
         >
+        <StarRating
+          :rating="props.rating"
+          :class="{
+            'mt-2': props.layout === 'horizontal',
+            'mt-4': props.layout === 'vertical'
+          }"
+        />
       </div>
     </div>
   </RouterLink>
