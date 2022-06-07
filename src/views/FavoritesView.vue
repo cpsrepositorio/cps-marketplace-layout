@@ -4,15 +4,15 @@ import Button from '@/components/Button.vue'
 import EmptyState from '@/components/EmptyState.vue'
 import LayoutContainer from '@/components/LayoutContainer.vue'
 import { useHead } from '@vueuse/head'
+import { onActivated } from 'vue'
 import { RouterLink } from 'vue-router'
 
-useHead({ title: 'Favoritos - CPS Marketplace' })
+const title = 'Favoritos'
+onActivated(() => useHead({ title: `${title} - CPS Marketplace` }))
 </script>
 
 <template>
-  <LayoutContainer>
-    <h2 class="text-xl font-semibold">Favoritos</h2>
-
+  <LayoutContainer :title="title">
     <EmptyState
       title="Não há favoritos para exibir aqui..."
       description="Que tal começar a favoritar alguns produtos agora mesmo?"

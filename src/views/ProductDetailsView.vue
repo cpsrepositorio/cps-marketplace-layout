@@ -1,8 +1,9 @@
 <script setup>
 import LayoutContainer from '@/components/LayoutContainer.vue'
 import { useHead } from '@vueuse/head'
+import { onActivated } from 'vue'
 
-useHead({ title: 'CPS Marketplace' })
+onActivated(() => useHead({ title: 'CPS Marketplace' }))
 </script>
 
 <template>

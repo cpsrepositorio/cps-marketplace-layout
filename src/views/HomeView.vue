@@ -5,8 +5,9 @@ import { useRandomValue } from '@/composition'
 import { useCategories } from '@/composition/services/useCategories'
 import { useProducts } from '@/composition/services/useProducts'
 import { useHead } from '@vueuse/head'
+import { onActivated } from 'vue'
 
-useHead({ title: 'CPS Marketplace' })
+onActivated(() => useHead({ title: 'CPS Marketplace' }))
 
 const categories = useCategories()
 
@@ -31,10 +32,8 @@ function productsByCategory(categoryId) {
 
 <template>
   <LayoutContainer>
-    <h2 class="text-xl font-semibold">Início</h2>
-
     <div
-      class="bg-gradient-to-br rounded from-cyan-800 to-red-800 text-white grid place-items-center h-[25vh] mt-4 lg:mt-6"
+      class="bg-gradient-to-br rounded-tl-lg from-cyan-800 to-red-800 text-white grid place-items-center -mt-4 lg:-mt-6 -mx-4 lg:-mx-6 h-[25vh]"
     >
       Algum destaque especial aqui
     </div>

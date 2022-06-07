@@ -1,5 +1,7 @@
 <script setup>
 const props = defineProps({
+  title: String,
+
   allowScroll: {
     type: Boolean,
     default: true
@@ -13,6 +15,10 @@ const props = defineProps({
     :class="{ 'overflow-y-auto': props.allowScroll }"
   >
     <div class="max-w-[112rem] mx-auto min-h-full flex flex-col">
+      <h2 v-if="props.title" class="text-xl font-semibold">
+        {{ props.title }}
+      </h2>
+
       <slot />
     </div>
   </main>
